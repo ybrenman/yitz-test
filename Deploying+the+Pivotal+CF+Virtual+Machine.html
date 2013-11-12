@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Pivotal Product Documentation : Deploying the Pivotal CF Virtual Machine</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="page">
+            <div id="main">
+                <div id="main-header" class="pageSectionHeader">
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Pivotal Product Documentation : Deploying the Pivotal CF Virtual Machine
+                        </span>
+                    </h1>
+
+                    <div class="page-metadata">
+                        <p>This page last changed on Oct 28, 2013 by <font color="#0050B2">rawlie</font>.</p>
+                    </div>
+                </div>
+
+                <div id="content" class="view">
+                    <div id="main-content" class="wiki-content group">
+                    <p>Before starting the steps in this section, complete the steps in <a href="Configuring%2Bthe%2BvSphere%2BEnvironment.html">Configuring the vSphere Environment</a>.</p><p>In this section, you deploy a VMware OVF template to create the Pivotal CF virtual machine. This virtual machine runs the Pivotal CF Installer that you will use to provision the virtual machines for Pivotal Analytics and to install Pivotal Analytics software. </p><ol><li>Select the <strong>Inventory &gt; Hosts and Clusters</strong> view.</li><li>Select (what?? datacenter? templates folder?  (jack is checking w/ tempest team)  (datacenter, I think)</li><li>Click <strong>File</strong> &gt; <strong>Deploy OVF template</strong>.</li><li>Click the <strong>Browse</strong> button to open a file browser.</li><li>Browse to the ova template you received with your Pivotal Analytics software and click <strong>Next</strong>.</li><li>Verify the OVF template details and click <strong>Next</strong>.</li><li>Accept the license agreement and click <strong>Next</strong>.<br />The <strong>Name and Location</strong> screen displays.  </li><li> Select your datacenter. </li><li>Enter a name for the virtual machine, such as Pivotal CF.<br />The <strong>Host/Cluster</strong> screen displays.</li><li>Select the cluster you created.<br />The <strong>Specific Host</strong> screen displays.  </li><li>Select the ESXi host in this cluster. <br />The <strong>Disk Format</strong> screen displays and shows the name of the datastore you created.</li><li>Select <strong>Thick Provision Lazy Zero</strong> and click <strong>Next</strong>.<br />The <strong>Network Mapping</strong> screen displays.  </li><li>Select a destination network and click <strong>Next</strong>. If you have defined a vlan or other networking, you may select that networking destination. Otherwise, select the default, <strong>VM Network</strong>. <br />The <strong>Properties</strong> screen displays. </li><li>Enter the <strong>IP Address</strong>, <strong>Netmask, </strong><strong>Default Gateway</strong>, and <strong>DNS</strong>  fields with the appropriate entries for your networking environment.</li><li>Enter and confirm the <strong>Admin Password</strong> for this virtual machine and click <strong>Next</strong>.<br />The username for this VM is <strong>tempest</strong> ??really?. Use this username and the Admin password for SSH access to the Pivotal CF Installer virtual machine. <br />The <strong>Ready to Complete</strong> screen displays.</li><li><p>Select <strong>Power on after deployment </strong>and click <strong>Finish</strong>.<br />vCenter begins to deploy and start the virtual machine. This may take up to 15 minutes to complete.</p></li><li>Continue with the installation procedure using the <strong>Pivotal CF Installer</strong>. <br />See <a href="Configuring%2Bthe%2BPivotal%2BCF%2BInstaller%2Bto%2BInstall%2BPivotal%2BAnalytics.html">Configuring the Pivotal CF Installer to Install Pivotal Analytics</a>.</li></ol><p><span style="font-size: 14.0px;line-height: 1.42857;"> <br /> </span></p><p> </p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619850/62783562.png">image2013-10-1 10:42:0.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619850/62783563.png">image2013-10-1 11:8:21.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619850/62783564.png">image2013-10-1 11:8:22.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619850/62783565.png">image2013-10-1 11:14:30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619850/62783566.png">image2013-10-1 11:15:6.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                 
+                </div>             </div> 
+            <div id="footer" style="background: url(https://confluence.greenplum.com/images/border/border_bottom.gif) repeat-x;">
+                <p><small>Document generated by Confluence on Nov 12, 2013 14:18</small></p>
+            </div>
+        </div>     </body>
+</html>

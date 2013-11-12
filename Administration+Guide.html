@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Pivotal Product Documentation : Administration Guide</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="page">
+            <div id="main">
+                <div id="main-header" class="pageSectionHeader">
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Pivotal Product Documentation : Administration Guide
+                        </span>
+                    </h1>
+
+                    <div class="page-metadata">
+                        <p>This page last changed on Nov 05, 2013 by <font color="#0050B2">rawlie</font>.</p>
+                    </div>
+                </div>
+
+                <div id="content" class="view">
+                    <div id="main-content" class="wiki-content group">
+                    <p><style type='text/css'>/*<![CDATA[*/
+div.rbtoc1384294739399 {padding: 0px;}
+div.rbtoc1384294739399 ul {list-style: disc;margin-left: 0px;}
+div.rbtoc1384294739399 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class='toc rbtoc1384294739399'>
+<ul class='toc-indentation'>
+<li><a href='#AdministrationGuide-SystemArchitecture'>System Architecture</a></li>
+<li><a href='#AdministrationGuide-GlobalSettings'>Global Settings</a></li>
+<li><a href='#AdministrationGuide-ManagingProjects'>Managing Projects</a>
+<ul class='toc-indentation'>
+<li><a href='#AdministrationGuide-Addanewproject'>Add a new project</a></li>
+<li><a href='#AdministrationGuide-sharingSharingProjects'><span class="confluence-anchor-link" id="AdministrationGuide-sharing">Sharing Projects</span></a></li>
+<li><a href='#AdministrationGuide-DeletingProjects'>Deleting Projects</a></li>
+</ul>
+</li>
+<li><a href='#AdministrationGuide-UserManagement'>User Management</a>
+<ul class='toc-indentation'>
+<li><a href='#AdministrationGuide-Settingupanewuser'>Setting up a new user</a></li>
+<li><a href='#AdministrationGuide-Managingyouruserprofile'>Managing your user profile</a></li>
+<li><a href='#AdministrationGuide-Changingyourpassword'>Changing your password</a></li>
+<li><a href='#AdministrationGuide-ViewyourAccountOverview'>View your Account Overview</a></li>
+<li><a href='#AdministrationGuide-ViewingotherUserProjects'>Viewing other User Projects</a></li>
+</ul>
+</li>
+</ul>
+</div></p><h1 id="AdministrationGuide-SystemArchitecture">System Architecture</h1><p>??diagram needs work</p><p><img class="confluence-embedded-image" width="500" src="attachments/61221668/65732645.png" data-image-src="attachments/61221668/65732645.png"></p><h1 id="AdministrationGuide-GlobalSettings">Global Settings</h1><p>To configure global settings:</p><ol><li>Click the user name drop-down list in the upper-right corner and s<span style="font-size: 14.0px;line-height: 1.4285715;">elect </span> <strong style="font-size: 14.0px;line-height: 1.4285715;">Global Settings</strong> <span style="font-size: 14.0px;line-height: 1.4285715;">.<br /> </span> <img class="confluence-embedded-image" src="attachments/61221668/64192569.png" data-image-src="attachments/61221668/64192569.png"> <span style="font-size: 14.0px;line-height: 1.4285715;"> </span></li><li><p>Configure the following settings that apply to all projects in your Pivotal Analytics application:</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Setting</th><th class="confluenceTh">Description</th></tr><tr><td class="confluenceTd">Data Sampling</td><td class="confluenceTd"><p><strong>Data sampling</strong> allows you to limit the number of events ingested by Pivotal Analytics for analysis. When you set this sampling interval, only events on the interval are processed. For example, set the <strong>Sample every</strong> drop-down list to 10 to process only every 10th record of your data. You can also choose intervals of <span style="background-color: transparent;font-size: 14.0px;line-height: 1.4285715;"> 100, 1000, 5000, or 10000 events.</span></p><p>You can also override the global setting for Data Sampling for each project. See <a href="Administration%2BGuide.html">Changing Project Settings</a>.</p></td></tr><tr><td class="confluenceTd">Data Search</td><td class="confluenceTd">Sets the period of time used for searching data in <strong>Canvas View</strong> or <strong>Auto Charts</strong> view. Only events within the specified time period are included in the search results. <span>You can chose Day, Week, Month, or Year.</span></td></tr><tr><td class="confluenceTd">Status Notifications</td><td class="confluenceTd"><p>Sets the type of notifications sent from Pivotal Analytics. Choose one or both of the following:</p><ul><li><strong>By Email</strong>—Sends email notifications to the email address defined in the profile.</li><li><strong>On Browser</strong> <span>—Displays notifications in the Web browser where Pivotal Analytics is running.</span></li></ul><p><span>??do I need to add this, which is in gui: <em>Note: To enable notification on Firefox browser, enter '<a href="http://aboutconfig" class="external-link" rel="nofollow">about:config</a>&quot; in the browser's address bar, and set &quot;network.websocket.allowInsecureFromHTTPS&quot; to true. Save your changes.</em> </span></p></td></tr></tbody></table></div></li><li>Click <strong>Save Changes</strong>.</li></ol><p><span class="confluence-anchor-link" id="AdministrationGuide-manageprojects"></span></p><h1 id="AdministrationGuide-ManagingProjects">Managing Projects</h1><p>A project is a grouping of your data sources and data visualizations of that data. You can preform the the following actions to manage your projects:</p><ul><li><a href="Administration%2BGuide.html">Add a new project</a></li><li><a href="Administration%2BGuide.html">Change project settings</a></li><li><a href="Administration%2BGuide.html">Sharing a project</a></li></ul><p><span class="confluence-anchor-link" id="AdministrationGuide-newproject"></span></p><h2 id="AdministrationGuide-Addanewproject">Add a new project</h2><p>To add a new project: </p><ol><li>Click the Home/All Projects button in the left menu bar and select <strong>New Project</strong>.<br /> <img class="confluence-embedded-image" width="600" src="attachments/61221668/64192571.png" data-image-src="attachments/61221668/64192571.png"></li><li>Enter a name and description for your project.</li><li>Click <strong>Add Project</strong>.<br />Your new project is created.</li></ol><p>For information about adding data sources, see <a href="Data%2BSource%2BManagement%2BGuide.html">Data Source Management Guide</a>.</p><p><span style="color: rgb(0,0,0);font-size: 20.0px;line-height: 1.5;"> <span class="confluence-anchor-link" id="AdministrationGuide-changeproject"></span>Changing Project Settings</span></p><p>To override the global setting for Data Sampling for a project:</p><ol><li>Select a project by clicking the Home/All Projects icon in the left menu bar and click on a project name. <br /> <img class="confluence-embedded-image" width="400" src="attachments/61221668/64192572.png" data-image-src="attachments/61221668/64192572.png"></li><li>Click the Manage icon in the left menu bar.</li><li>Click Project Settings.<br /> <img class="confluence-embedded-image" width="405" src="attachments/61221668/64192574.png" data-image-src="attachments/61221668/64192574.png"> </li><li>Select <strong>Override Global Settings</strong>.</li><li>Enable or disable sampling by checking or unchecking <strong>Enable sampling</strong>.</li><li>Set the number of events to sample using the <strong>Sample every</strong> drop-down list.</li><li>Click <strong>Save Changes</strong>.</li></ol><h2 id="AdministrationGuide-sharingSharingProjects"><span class="confluence-anchor-link" id="AdministrationGuide-sharing"></span>Sharing Projects</h2><p>You can share a project with other Pivotal Analytics users.</p><p>To share a project:</p><ol><li>Select a project by clicking the Home/All Projects icon in the left menu bar and click on a project name. </li><li>Click the Manage icon in the left menu bar and select <strong>Sharing</strong>. </li><li>Under Project Details, click <strong>[Share this project]</strong>.</li><li>Enter the email addresses of the users with whom you want to share your project. Separate the addresses with commas.</li><li><span style="font-size: 14.0px;line-height: 1.4285715;">(Optional) Enter the text of a message to include with the email that invites the users to share your project.<br />The users receive an email inviting them to share your project and a list of project members displays.</span></li></ol><p><span style="font-size: 14.0px;line-height: 1.4285715;"> <span class="confluence-anchor-link" id="AdministrationGuide-deleteproject"></span> </span></p><h2 id="AdministrationGuide-DeletingProjects">Deleting Projects</h2><p>To delete a project:</p><ol><li>Select <strong>Projects</strong> &gt; <strong>View All Projects</strong><br />A box displays containing information about each project defined in your account.</li><li>Click the Trash icon in the box containing the project you want to delete. </li><li>Confirm the deletion.<br />The project is deleted.  </li></ol><p><span style="font-size: 14.0px;line-height: 1.4285715;"> <span class="confluence-anchor-link" id="AdministrationGuide-usermanagement"></span> <br /> </span></p><h1 id="AdministrationGuide-UserManagement">User Management</h1><p>You can perform the following actions to manage Pivotal Analytics users:</p><ul><li><a href="Administration%2BGuide.html">Set up a new user</a></li><li><a href="Administration%2BGuide.html">Modify your user profile</a></li><li><a href="Administration%2BGuide.html">Change your password</a></li><li><a href="Administration%2BGuide.html">View account overview</a></li><li><a href="Administration%2BGuide.html">Viewing projects</a></li></ul><p><span class="confluence-anchor-link" id="AdministrationGuide-setup"></span></p><h2 id="AdministrationGuide-Settingupanewuser">Setting up a new user</h2><p>To set up a new user account:</p><ol><li>In a Web browser, navigate to Pivotal Analytics.</li><li>Click the <strong>New User? Register</strong> link. </li><li>Enter the following user information:</li><ul><li>The name of the business</li><li>email addresss of user</li><li>password</li><li>First and Last Name </li><li>Phone number</li><li>City, state, and country</li></ul><li>Click <strong>Submit</strong>.<br /> <span style="font-size: 14.0px;line-height: 1.4285715;">The user receives an email with instructions for setting up their account.</span></li></ol><p><span style="font-size: 14.0px;line-height: 1.4285715;"> <span class="confluence-anchor-link" id="AdministrationGuide-profile"></span> </span></p><h2 id="AdministrationGuide-Managingyouruserprofile">Managing your user profile</h2><p><span style="font-size: 14.0px;line-height: 1.4285715;">To manage your user profile:</span></p><ol><li><span style="font-size: 14.0px;line-height: 1.4285715;">Login to Pivotal Analytics.</span></li><li>Click the user name drop-down list in the upper-right corner and select <strong>Profile</strong>.</li><li>Change any of the following fields:</li><ul><li>First and Last Name </li><li>Phone number</li><li>City, state, and country</li></ul><li>Click <strong>Save Changes</strong>.</li></ol><p><span class="confluence-anchor-link" id="AdministrationGuide-password"></span></p><h2 id="AdministrationGuide-Changingyourpassword">Changing your password</h2><p>To change your password:</p><ol><li><span>Login to Pivotal Analytics.</span></li><li>Click the user name drop-down list in the upper-right corner and select <strong>Password</strong>. </li><li>Enter your current password.</li><li>Enter the new password, and confirm. </li><li>Click <strong>Save Changes</strong>.</li></ol><p><span style="font-size: 14.0px;line-height: 1.4285715;"> <br /> </span></p><p><span class="confluence-anchor-link" id="AdministrationGuide-overview"></span></p><h2 id="AdministrationGuide-ViewyourAccountOverview">View your Account Overview</h2><p>To view a summary of your projects:</p><ol><li>Login to Pivotal Analytics.</li><li><span style="font-size: 14.0px;line-height: 1.4285715;">Click the user name drop-down list in the upper-right corner and select </span> <strong style="font-size: 14.0px;line-height: 1.4285715;">Account Overview</strong> <span style="font-size: 14.0px;line-height: 1.4285715;">.</span></li></ol><p><span style="font-size: 14.0px;line-height: 1.4285715;"> <span class="confluence-anchor-link" id="AdministrationGuide-viewprojects"></span> <br /> </span></p><h2 id="AdministrationGuide-ViewingotherUserProjects">Viewing other User Projects</h2><p>An Administrative user can view the projects of other users. ?? not in UI yet. </p><p>To view projects:</p><ol><li>Login to Pivotal Analytics.</li><li>Click the Manage icon in the left menu bar.</li><li>Select <strong>Admin??.</strong></li><li>Select a user<strong>.</strong></li><li><strong> <br /> </strong></li></ol>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/63602705.png">image2013-10-7 14:37:25.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/63602706.png">image2013-10-7 14:38:17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/63602707.png">image2013-10-7 14:41:44.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/63602708.png">image2013-10-7 14:42:13.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/63602709.png">image2013-10-7 14:49:2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/63602710.png">image2013-10-7 15:27:0.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/63602711.png">image2013-10-7 15:29:53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/63602712.png">image2013-10-7 15:47:53.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/63602713.png">image2013-10-7 16:3:6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/63602714.png">image2013-10-7 16:6:51.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/63602715.png">image2013-10-7 16:12:12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/63602716.png">image2013-10-7 16:12:30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/64192569.png">global_settings.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/64192570.png">image2013-10-15 11:55:23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/64192571.png">new_project.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/64192573.png">select_project.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/64192572.png">select_project.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/64192574.png">manage_project_settings.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/61221668/65732645.png">PA_system_arch.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                 
+                </div>             </div> 
+            <div id="footer" style="background: url(https://confluence.greenplum.com/images/border/border_bottom.gif) repeat-x;">
+                <p><small>Document generated by Confluence on Nov 12, 2013 14:18</small></p>
+            </div>
+        </div>     </body>
+</html>

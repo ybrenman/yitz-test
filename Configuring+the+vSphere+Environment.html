@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Pivotal Product Documentation : Configuring the vSphere Environment</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="page">
+            <div id="main">
+                <div id="main-header" class="pageSectionHeader">
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Pivotal Product Documentation : Configuring the vSphere Environment
+                        </span>
+                    </h1>
+
+                    <div class="page-metadata">
+                        <p>This page last changed on Oct 31, 2013 by <font color="#0050B2">rawlie</font>.</p>
+                    </div>
+                </div>
+
+                <div id="content" class="view">
+                    <div id="main-content" class="wiki-content group">
+                    <ol><li>Login to the vCenter installation using VMware vSphere client software. <br />This software is available only for the Microsoft Windows platform.</li><li>Select the <strong>Inventory &gt; Hosts and Clusters</strong> view.</li><li>Click <strong>Create a datacenter</strong>.<br />A new datacenter icon displays in the navigation tree.</li><li>Enter a name for the datacenter.</li><li>Select the new datacenter in the navigation tree.</li><li>Click <strong>Create a cluster</strong>. <br />The <strong>New Cluster Wizard</strong> opens and displays the <strong>Cluster Features</strong> screen.</li><li>Enter a name for the cluster.</li><li>Under Cluster Features, select <strong>Turn on vSphereDRS</strong> and click <strong>Next</strong>.<br />The<strong> vSphere DRS configuration</strong> screen displays.</li><li>Select <strong>Fully Automated</strong> or <strong>Partially Automated</strong> (Consult your vSphere documentation for more information on which option to choose.)  and click <strong>Next.<br /></strong>The Power Management screen displays.</li><li>Select <strong>Off</strong> and click <strong>Next</strong>.<br />The <strong>Virtual Machine Swapfile Location</strong> screen displays.</li><li>Select <strong>Store the swapfile in the same directory as the virtual machine</strong> and click <strong>Next</strong>.<br />The <strong>New Cluster Wizard</strong> displays the options and allows you to correct them if necessary. </li><li>Click <strong>Finish</strong>.</li><li>Select the cluster you created.</li><li>Click <strong>Add a Host</strong>.<br />The <strong>Add Host</strong> Wizard displays.</li><li>Enter the host name or IP address of the ESXi server for this host.</li><li>Enter the username for the administrative account for this host. <br />A Security Alert dialog box may appear. Click <strong>Yes</strong>.<br />The <strong>Assign License</strong> screen displays.</li><li>Select the appropriate license for your vSphere deployment and click <strong>Next</strong>.<br />The wizard displays the host configuration for review.</li><li>Click <strong>Next</strong>.<br />The <strong>Configure Lockdown Mode</strong> screen displays.</li><li>Do not select any options and click <strong>Next</strong>.<br />The <strong>Choose Resource Pool</strong> screen opens.</li><li>Select the default option to put all of the host's resources in the cluster's root resource pool and click <strong>Next</strong>.</li><li>Review the host options you have selected and click <strong>Finish</strong>.</li><li>Select the <strong>Inventory &gt; VMs and Templates</strong> view.</li><li>Select the data center you created in an earlier step.</li><li>Click the create folder icon to create a folder under the data center. Name the folder <strong>vm_folder</strong>.</li><li>Click the create folder icon to create a folder under the data center. Name the folder <strong>templates_folder</strong>.</li><li>Select the <strong>Inventory &gt; Datastores and Datastore Clusters</strong> view.</li><li>Select your datacenter. Within the datacenter folder you should see a datastore whose name has been auto-generated. If the name contains spaces, rename the datastore so that there are no spaces in the name.</li><li>Select the datastore.</li><li>Click <strong>Browse this datastore</strong>.<br />A file browser window displays. </li><li>Create a new folder under the top-level folder and name the folder <strong>disk_folder</strong>??and what do we do with this??.<br /><br /></li></ol><p>You have now configured your vSphere environment. Continue the Pivotal Analytics installation by deplyong the Pivotal CF Installer virtual machine.<br />See <a href="Deploying%2Bthe%2BPivotal%2BCF%2BVirtual%2BMachine.html">Deploying the Pivotal CF Virtual Machine</a>. </p>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" style="background: url(https://confluence.greenplum.com/images/border/border_bottom.gif) repeat-x;">
+                <p><small>Document generated by Confluence on Nov 12, 2013 14:18</small></p>
+            </div>
+        </div>     </body>
+</html>

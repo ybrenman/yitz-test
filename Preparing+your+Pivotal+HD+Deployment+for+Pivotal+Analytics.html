@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Pivotal Product Documentation : Preparing your Pivotal HD Deployment for Pivotal Analytics</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="page">
+            <div id="main">
+                <div id="main-header" class="pageSectionHeader">
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Pivotal Product Documentation : Preparing your Pivotal HD Deployment for Pivotal Analytics
+                        </span>
+                    </h1>
+
+                    <div class="page-metadata">
+                        <p>This page last changed on Nov 01, 2013 by <font color="#0050B2">rawlie</font>.</p>
+                    </div>
+                </div>
+
+                <div id="content" class="view">
+                    <div id="main-content" class="wiki-content group">
+                    <p>If your Pivotal HD deployment was installed using the Pivotal Command Center software, follow the steps in this section to prepare your PHD deployment for use with Pivotal Analytics.</p><p>To use this procedure, you must have root access to all of the PHD nodes, without having to enter a password.</p><ol><li>Download the <code>adduser</code> tool from: need URL??</li><li>Login to your Pivotal Command Center node using SSH as the root user. </li><li>Create a text file that lists all of the Pivotal HD nodes. Enter the IP address or host name for each node, one per line. Save the file with a name of your choosing. </li><li>Run the <code>adduser</code> tool. For example: <br /> <code>./adduserPHD.py hostfile -g hadoop -H</code>  (Add the<code>  -s</code> option if you are connecting to a secure PHD deployment.)<br />(Where <em> <code>hostfile</code> </em> is the file you created that contains the IP address or host name of each Hadoop node.)<br />The tool prompts you for the login name, the full name of the user, and the password. Enter <code>paadmin </code>as the login name and create a password for this user. The tool also creates the endpoint <code>/user/paadmin</code> in HDFS. You set the <code>-g</code> option to <code>hadoop</code>, so that the <code>paadmin</code> user becomes a member of the <code>hadoop</code> group.</li><li>Verify these user and group changes by using SSH to login to each PHD node and run the following command to make sure the <code>paadmin</code> user has been created and is a member of the  <code>hadoop</code> group:<br /> <code>$ groups paadmin</code> <br />The command should respond with the following: <br /> <code>$ paadmin : hadoop</code></li><li>Verify that the endpoint <code>/user/paadmin</code> has been created and is owned by <code>paadmin:hadoop</code> in HDFS by running the following command:<br /> <code>sudo -u hdfs hdfs dfs -ls /user<br /> </code>The command displays a directory listing that should look similar to the following output, indicating that the <code>/user/paadmin</code> endpoint has been created and is owned by <code>paadmin:hadoop:</code> <code> <br />drwxr-xr-x   - paadmin hadoop          0 2013-10-31 14:39 /user/paadmin </code></li><li>Switch to the <code style="background-color: transparent;font-size: 14.0px;line-height: 1.4285715;">gpadmin</code> user by running the following command:<br /> <code style="background-color: transparent;font-size: 14.0px;line-height: 1.4285715;">su - gpadmin</code></li><li>Run the following command to retrieve the cluster configuration of your Pivotal HD deployment:<br /> <code>icm_client fetch-configuration -o &lt;<em>output directory path</em>&gt; -l &lt;<em>Pivotal HD cluster nam</em>e&gt;</code> <br /> <em> <code>&lt;output directory path&gt;</code> </em> is a local directory where the <code>icm_client</code> command saves the cluster configuration file, named <code>hdfs-site.xml</code>.</li><li><p>Open the <code>hdfs-site.xml</code> file in a text editor and locate the following property: <code>dfs.block.local-path-access.user</code>. The property is defined in an XML block that looks like the following:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: Confluence; brush: html/xml; gutter: false" style="font-size:12px;">&lt;property&gt;
+   &lt;name&gt;dfs.block.local-path-access.user&lt;/name&gt;
+   &lt;value&gt;gpadmin,hdfs,mapred,yarn,hbase,hive&lt;/value&gt;
+   &lt;description&gt;
+      specify the user allowed to do short circuit read
+   &lt;/description&gt;
+&lt;/property&gt;</pre>
+</div></div></li><li>In the <code>&lt;value&gt;</code> element, add the <code>paadmin</code> user. The element now looks like the following:<br /><pre>&lt;value&gt;paadmin,gpadmin,hdfs,mapred,yarn,hbase,hive&lt;/value&gt;</pre></li><li>Save the file. </li><li><p>Run the following command to update the username on all nodes of your Pivotal HD cluster:<br /> <code>icm_client reconfigure -l &lt;<em>Pivotal HD cluste r name</em>&gt; -c &lt;<em>input directory path</em>&gt;</code> <br /> <em> <code>&lt;input directory path&gt;</code> </em> is the local directory where you saved the <code>hdfs-site.xml</code> file.  <br />The command prompts your for the root password for the cluster nodes and also asks you to create a password for the <code>gpadmin</code> user. <br />Depending on the number of nodes in your cluster, this command may take 10 minutes?? or more to complete. When the update completes you will see a message similar to the following:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: Confluence; brush: html/xml; gutter: false" style="font-size:12px;">Results:
+phd3... [Success]
+Cluster ID: 27</pre>
+</div></div></li><li>Restart the Pivotal HD cluster using the following command:<br /> <code>icm_client start -l &lt;Pivotal HD <em>cluster name</em>&gt;<br /> </code> This command may take some time to complete.  </li></ol>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" style="background: url(https://confluence.greenplum.com/images/border/border_bottom.gif) repeat-x;">
+                <p><small>Document generated by Confluence on Nov 12, 2013 14:18</small></p>
+            </div>
+        </div>     </body>
+</html>

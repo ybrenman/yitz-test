@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Pivotal Product Documentation : Configuring the Pivotal CF Installer to Install Pivotal Analytics</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="page">
+            <div id="main">
+                <div id="main-header" class="pageSectionHeader">
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Pivotal Product Documentation : Configuring the Pivotal CF Installer to Install Pivotal Analytics
+                        </span>
+                    </h1>
+
+                    <div class="page-metadata">
+                        <p>This page last changed on Oct 31, 2013 by <font color="#0050B2">rawlie</font>.</p>
+                    </div>
+                </div>
+
+                <div id="content" class="view">
+                    <div id="main-content" class="wiki-content group">
+                    <p>Follow these steps to configure the Pivotal CF Installer. This installer runs in the VM you created in the previous installation steps, which you must complete before completing the steps in this section. See <a href="Deploying%2Bthe%2BPivotal%2BCF%2BVirtual%2BMachine.html">Deploying the Pivotal CF Virtual Machine</a>.</p><p> </p><ol><li>Open a Web browser to the IP address assigned to the Virtual machine.<br /><span style="font-size: 14.0px;line-height: 1.42857;">The Pivotal CF Logon page displays. <br /> <img class="confluence-embedded-image confluence-thumbnail" width="300" src="download/thumbnails/62619856/1595018982" data-image-src="attachments/62619856/62783567.png"> </span></li><li><span style="font-size: 14.0px;line-height: 1.42857;">Enter the credentials for the administrative user and click </span><strong style="font-size: 14.0px;line-height: 1.42857;">Create Admin User</strong><span style="font-size: 14.0px;line-height: 1.42857;">.<br /> </span> <span style="font-size: 14.0px;line-height: 1.42857;">The Pivotal CF Installation page displays. </span> <span style="font-size: 14.0px;line-height: 1.42857;"> </span><br /><span style="font-size: 14.0px;line-height: 1.42857;"> <img class="confluence-embedded-image" src="attachments/62619856/64192933.png" data-image-src="attachments/62619856/64192933.png"><br />?? need new screen shot<br />======================================Simon video # 2:</span></li><li><span style="font-size: 14.0px;line-height: 1.42857;">Click <strong>Add a new product</strong>.<br /> </span></li><li><span style="font-size: 14.0px;line-height: 1.42857;">Click <strong>Choose File</strong>.<br />A file browser window opens. </span></li><li><span style="font-size: 14.0px;line-height: 1.42857;">Browse to the tar file containing your Pivotal Analytics software. ??name of file?? and click <strong>Open</strong>.</span><br /><span style="font-size: 14.0px;line-height: 1.42857;">Under Import Component, click <strong>Add</strong>.<br />The components are uploaded to the Pivotal CF Installer virtual machine. <br />When the upload completes, the Pivotal CF Installer home page displays and now includes a box for Pivotal Analytics.</span></li><li><span style="font-size: 14.0px;line-height: 1.42857;">In the VMware vSphere box, click </span><strong style="font-size: 14.0px;line-height: 1.42857;">Configure</strong>.<span style="font-size: 14.0px;line-height: 1.42857;"> </span></li><li><span style="font-size: 14.0px;line-height: 1.42857;">The VMware Infrastructure configuration page displays.</span><br /><span style="font-size: 14.0px;line-height: 1.42857;"> </span><img class="confluence-embedded-image" src="attachments/62619856/64192548.png" data-image-src="attachments/62619856/64192548.png"></li><li><p><span style="font-size: 14.0px;line-height: 1.42857;">Select </span><strong style="font-size: 14.0px;line-height: 1.42857;">vCenter credentials </strong><span style="font-size: 14.0px;line-height: 1.42857;">and </span><span style="font-size: 14.0px;line-height: 1.42857;">enter the following user information.</span></p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter</th><th class="confluenceTh">Description</th></tr><tr><td class="confluenceTd">IP Address</td><td class="confluenceTd">IP address of the vCenter server where your PIvotal Analytics virtual machines will be created</td></tr><tr><td class="confluenceTd">User Name</td><td class="confluenceTd">User name for access to the vCenter server. The user should have privileges to create and delete virtual machines and folders</td></tr><tr><td class="confluenceTd">Password</td><td class="confluenceTd">Password for access to the vCenter server</td></tr></tbody></table></div></li><li><span>Click <strong>Save</strong>.</span></li><li><p><span> <span>Select <strong>vSphere configuration. </strong>Using the values you defined when <a href="Configuring%2Bthe%2BvSphere%2BEnvironment.html">Configuring the vSphere Environment</a>, enter the following resource information: <br /> </span> </span></p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter</th><th class="confluenceTh">Description</th></tr><tr><td class="confluenceTd">Network Name</td><td class="confluenceTd">The name of the Network as defined in your vSphere congifuration</td></tr><tr><td class="confluenceTd">Datacenter Name</td><td class="confluenceTd">The name of the datacenter as defined in your <span>vSphere </span>configuration</td></tr><tr><td class="confluenceTd">Cluster Name</td><td class="confluenceTd">The name of the Cluster as defined in your <span>vSphere </span>configuration</td></tr><tr><td class="confluenceTd">Datastore Name</td><td class="confluenceTd">The name of the datastore <span> as defined in your <span>vSphere </span>configuration</span></td></tr><tr><td class="confluenceTd">Resource Pool Name</td><td class="confluenceTd">(Optional) The resource pool where you will deploy Cloud Foundry<span> </span></td></tr></tbody></table></div></li><li><span>Click <strong>Save</strong>.</span></li><li><p><span>Select </span><strong>Network configuration </strong><span>and enter the following network information. The installer uses this information when creating the virtual machines for your Pivotal Analytics installation. </span></p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter</th><th class="confluenceTh">Description</th></tr><tr><td class="confluenceTd">IP Range</td><td class="confluenceTd">A valid range of IP addresses that vSphere can use to provision virtual machines. For example: <code>172.16.64.1/24</code></td></tr><tr><td class="confluenceTd">Reserved IP Ranges</td><td class="confluenceTd"><p>A list of IP addresses that you do not want provisioned by vSphere. List the IP addresses separated by commas. You can also specify a range of addresses. For example, the following entry:</p><pre>172.16.64.1-172.16.64.3 </pre><p>excludes the following IP addresses:</p><ul><li><code>172.16.64.1</code></li><li><code>172.16.64.2</code></li><li><code>172.16.64.3</code></li></ul></td></tr><tr><td class="confluenceTd">DNS</td><td class="confluenceTd">One or more valid Domain Name Servers to be used by the provisioned virtual machines</td></tr><tr><td class="confluenceTd">Gateway</td><td class="confluenceTd">Gateway to be used by the provisioned virtual machines</td></tr></tbody></table></div><p><span> </span></p></li><li><span>Select </span><strong>NTP Server</strong><span> to configure a Network Time Protocol (NTP) server. Setting an NTP server provides consistent and valid time stamps for event data. Enter the IP addresses or host names of one or more NTP servers, separated by commas. </span></li><li><span>Click <strong>Save</strong>.</span></li><li><span>Select <strong>Resource sizes</strong> and click <strong>Save</strong> to a</span><span style="font-size: 14.0px;line-height: 1.4285715;">ccept the default values.  </span></li><li><span>Click <strong>Install Updates</strong>?? always?</span></li><li><span>Click status page to see status and get IP for ssh in case of problems ?? reword this</span><span><br /></span></li><li>Click <strong>Back to Install.<br /> </strong>The Pivotal CF Installation page displays again.</li></ol><p>In the next steps, you configure your Pivotal Analytics installation and its connection to the Hadoop cluster.</p><p>See <a href="Setting%2Bup%2BPivotal%2BAnalytics.html">Setting up Pivotal Analytics</a>. </p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619856/62783567.png">image2013-10-1 12:5:7.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619856/62783568.png">vmw_infra.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619856/62783569.png">image2013-10-1 13:50:18.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619856/64192931.png">pivotal_cf_install_start.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619856/64192549.png">vcenter_config.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619856/64192548.png">vcenter_config.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619856/64192893.png">image2013-10-25 15:2:13.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619856/64192894.png">image2013-10-25 15:2:57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619856/64192895.png">simon_resources.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619856/64192932.png">pivotal_cf_install_start.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619856/63602741.png">pivotal_cf_install_start.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/62619856/64192933.png">pivotal_cf_install_start2.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                 
+                </div>             </div> 
+            <div id="footer" style="background: url(https://confluence.greenplum.com/images/border/border_bottom.gif) repeat-x;">
+                <p><small>Document generated by Confluence on Nov 12, 2013 14:18</small></p>
+            </div>
+        </div>     </body>
+</html>
